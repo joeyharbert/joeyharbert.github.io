@@ -1906,7 +1906,7 @@ input, select, textarea {
 				opacity: 0;
 			}
 
-				.gallery .modal .inner img {
+				.gallery .modal .inner div {
 					display: block;
 					max-width: 90vw;
 					max-height: 85vh;

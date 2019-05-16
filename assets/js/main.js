@@ -638,10 +638,11 @@
 					$gallery = $a.parents('.gallery'),
 					$modal = $gallery.children('.modal'),
 					$modalImg = $modal.find('img'),
+					$modalDiv = $modal.find('div'),
 					href = $a.attr('href');
 
 				// Not an image? Bail.
-					if (!href.match(/\.(jpg|gif|png|mp4)$/))
+					if (!href.match(/\.(jpg|gif|png|mp4|html)$/))
 						return;
 
 				// Prevent default.
@@ -656,7 +657,19 @@
 					$modal[0]._locked = true;
 
 				// Set src.
-					$modalImg.attr('src', href);
+					//$modalImg.attr('src', href);
+
+				//Set html
+					$modalDiv.load(href);
+					// var xhttp = new XMLHttpRequest();
+				 //  xhttp.onreadystatechange = function() {
+				 //    if (this.readyState == 4 && this.status == 200) {
+				 //      $modalDiv.innerHTML =
+				 //      this.responseText;
+				 //    }
+				 //  };
+				 //  xhttp.open("GET", href, true);
+				 //  xhttp.send();
 
 				// Set visible.
 					$modal.addClass('visible');
