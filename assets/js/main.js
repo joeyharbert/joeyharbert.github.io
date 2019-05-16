@@ -660,7 +660,7 @@
 					//$modalImg.attr('src', href);
 
 				//Set html
-					$modalDiv.load(href);
+					$modalDiv.html.load(href);
 					// var xhttp = new XMLHttpRequest();
 				 //  xhttp.onreadystatechange = function() {
 				 //    if (this.readyState == 4 && this.status == 200) {
