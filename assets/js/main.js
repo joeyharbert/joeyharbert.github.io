@@ -657,19 +657,16 @@
 					$modal[0]._locked = true;
 
 				// Set src.
-					//$modalImg.attr('src', href);
+				if (!href.match(/\.(jpg|gif|png|mp4)$/)) {
+					$modalImg.attr('src', href);
+				}
+				else {
+					var inner = $modalDiv.children('.inner');
+					inner.innerHTML = '<iframe class="secondary" width="560" height="315" src="https://www.youtube.com/embed/QsjXQDWtPGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+				}
 
 				//Set html
-					$modalDiv.html.load(href);
-					// var xhttp = new XMLHttpRequest();
-				 //  xhttp.onreadystatechange = function() {
-				 //    if (this.readyState == 4 && this.status == 200) {
-				 //      $modalDiv.innerHTML =
-				 //      this.responseText;
-				 //    }
-				 //  };
-				 //  xhttp.open("GET", href, true);
-				 //  xhttp.send();
+					$modalDiv.load(href);
 
 				// Set visible.
 					$modal.addClass('visible');
